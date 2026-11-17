@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My Money</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f4f0;--card:#fff;--ink:#1c2a38;--mute:#6b7885;--line:#dde2dc;--in:#1f7a4d;--out:#c2412d;--accent:#1c2a38;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a22;--card:#1b2631;--ink:#e8edf2;--mute:#8d9aa7;--line:#2b3947;--in:#4cc38a;--out:#ee7d6a;--accent:#e8edf2;--on:#121a22}}
+:root[data-theme="dark"]{--bg:#121a22;--card:#1b2631;--ink:#e8edf2;--mute:#8d9aa7;--line:#2b3947;--in:#4cc38a;--out:#ee7d6a;--accent:#e8edf2;--on:#121a22}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.4 "DM Sans",system-ui,-apple-system,sans-serif}
+main{max-width:480px;margin:0 auto;padding:16px 16px 96px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.top select,.top input{font:inherit}
+.month{display:flex;align-items:center;gap:4px}
+.month button{background:none;border:0;color:var(--ink);font-size:22px;padding:6px 10px;cursor:pointer}
+.month strong{min-width:130px;text-align:center;font-weight:700}
+.bal{margin:14px 0 0;padding:20px;border-radius:20px;background:var(--accent);color:var(--on)}
+.bal small{opacity:.7;font-size:14px}
+.bal .n{font-size:40px;font-weight:700;letter-spacing:-1px;line-height:1.1;margin:2px 0 14px}
+.bal .row{display:flex;gap:24px}
+.bal .row div{font-size:14px;opacity:.9}
+.bal .row b{display:block;font-size:18px}
+h2{font-size:16px;margin:24px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px}
+.cat{padding:12px 14px}
+.cat+.cat{border-top:1px solid var(--line)}
+.cat .l{display:flex;justify-content:space-between;font-size:15px}
+.bar{height:6px;border-radius:3px;background:var(--line);margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--out)}
+.tx{display:flex;align-items:center;gap:12px;padding:12px 14px}
+.tx+.tx{border-top:1px solid var(--line)}
+.tx .m{flex:1;min-width:0}
+.tx .m b{display:block;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tx .m span{font-size:13px;color:var(--mute)}
+.amt{font-weight:700;white-space:nowrap}
+.amt.in{color:var(--in)}.amt.out{color:var(--out)}
+.del{background:none;border:0;color:var(--mute);font-size:20px;padding:4px 8px;cursor:pointer}
+.empty{padding:22px 16px;text-align:center;color:var(--mute)}
+.fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--accent);color:var(--on);border:0;border-radius:28px;padding:14px 22px;font:700 16px "DM Sans",system-ui,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}
+dialog{border:0;border-radius:20px;padding:20px;width:calc(100% - 24px);max-width:440px;background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.seg{display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px}
+.seg button{flex:1;padding:10px;border:0;background:none;color:var(--ink);font:500 16px inherit;font-family:inherit;cursor:pointer}
+.seg button.on{background:var(--accent);color:var(--on)}
+label{display:block;font-size:14px;color:var(--mute);margin:10px 0 4px}
+.f{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+.acts{display:flex;gap:10px;margin-top:18px}
+.acts button{flex:1;padding:13px;border-radius:12px;border:1px solid var(--line);background:none;color:var(--ink);font:700 16px "DM Sans",system-ui,sans-serif;cursor:pointer}
+.acts .go{background:var(--accent);color:var(--on);border-color:var(--accent)}
+.note{font-size:12px;color:var(--mute);text-align:center;margin-top:20px}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--in);outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <div class="month"><button id="prev" aria-label="Previous month">‹</button><strong id="mlabel"></strong><button id="next" aria-label="Next month">›</button></div>
+    <select id="cur" class="f" style="width:auto;padding:8px" aria-label="Currency"><option>$</option><option>€</option><option>£</option><option>₹</option><option>¥</option><option>R$</option><option>₩</option></select>
+  </div>
+  <section class="bal">
+    <small>Balance this month</small>
+    <div class="n" id="bal"></div>
+    <div class="row"><div>Income<b id="inc"></b></div><div>Spent<b id="exp"></b></div></div>
+  </section>
+  <h2>Where it went</h2>
+  <div class="card" id="cats"></div>
+  <h2>Transactions</h2>
+  <div class="card" id="list"></div>
+  <p class="note">Saved on this device only.</p>
+</main>
+<button class="fab" id="add">+ Add</button>
+
+<dialog id="dlg">
+  <div class="seg"><button id="tOut" class="on" type="button">Expense</button><button id="tIn" type="button">Income</button></div>
+  <label for="amount">Amount</label>
+  <input id="amount" class="f" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00">
+  <label for="cat">Category</label>
+  <select id="cat" class="f"></select>
+  <label for="note">Note (optional)</label>
+  <input id="note" class="f" type="text" maxlength="60" placeholder="e.g. Lunch with Sam">
+  <label for="date">Date</label>
+  <input id="date" class="f" type="date">
+  <div class="acts"><button id="cancel" type="button">Cancel</button><button id="save" class="go" type="button">Save</button></div>
+</dialog>
+
+<script>
+const CATS={out:["Food","Transport","Bills","Shopping","Health","Fun","Other"],in:["Salary","Gift","Other income"]};
+let txs=[],cur="$",type="out",view=new Date();view.setDate(1);
+try{txs=JSON.parse(localStorage.getItem("mm_tx")||"[]");cur=localStorage.getItem("mm_cur")||"$"}catch(e){}
+const $=id=>document.getElementById(id);
+const save=()=>{try{localStorage.setItem("mm_tx",JSON.stringify(txs));localStorage.setItem("mm_cur",cur)}catch(e){}};
+const money=n=>cur+n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function render(){
+  $("cur").value=cur;
+  $("mlabel").textContent=view.toLocaleDateString(undefined,{month:"long",year:"numeric"});
+  const key=iso(view).slice(0,7);
+  const m=txs.filter(t=>t.date.startsWith(key)).sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id);
+  const inc=m.filter(t=>t.type==="in").reduce((s,t)=>s+t.amount,0);
+  const exp=m.filter(t=>t.type==="out").reduce((s,t)=>s+t.amount,0);
+  $("bal").textContent=(inc-exp<0?"−":"")+money(Math.abs(inc-exp));
+  $("inc").textContent=money(inc);$("exp").textContent=money(exp);
+  const by={};m.filter(t=>t.type==="out").forEach(t=>by[t.cat]=(by[t.cat]||0)+t.amount);
+  const rows=Object.entries(by).sort((a,b)=>b[1]-a[1]);
+  $("cats").innerHTML=rows.length?rows.map(([c,v])=>`<div class="cat"><div class="l"><span>${esc(c)}</span><b>${money(v)}</b></div><div class="bar"><i style="width:${v/exp*100}%"></i></div></div>`).join(""):'<div class="empty">No spending yet this month.</div>';
+  $("list").innerHTML=m.length?m.map(t=>`<div class="tx"><div class="m"><b>${esc(t.note||t.cat)}</b><span>${esc(t.cat)} · ${new Date(t.date+"T00:00").toLocaleDateString(undefined,{month:"short",day:"numeric"})}</span></div><div class="amt ${t.type}">${t.type==="in"?"+":"−"}${money(t.amount)}</div><button class="del" data-id="${t.id}" aria-label="Delete">×</button></div>`).join(""):'<div class="empty">Tap “+ Add” to record your first transaction.</div>';
+}
+function setType(t){type=t;$("tOut").classList.toggle("on",t==="out");$("tIn").classList.toggle("on",t==="in");$("cat").innerHTML=CATS[t].map(c=>`<option>${c}</option>`).join("")}
+$("add").onclick=()=>{setType("out");$("amount").value="";$("note").value="";$("date").value=iso(new Date());$("dlg").showModal();$("amount").focus()};
+$("tOut").onclick=()=>setType("out");$("tIn").onclick=()=>setType("in");
+$("cancel").onclick=()=>$("dlg").close();
+$("save").onclick=()=>{
+  const a=parseFloat($("amount").value);
+  if(!(a>0)){$("amount").focus();return}
+  txs.push({id:Date.now(),type,amount:a,cat:$("cat").value,note:$("note").value.trim(),date:$("date").value||iso(new Date())});
+  save();$("dlg").close();render();
+};
+$("list").onclick=e=>{const b=e.target.closest(".del");if(!b)return;if(confirm("Delete this transaction?")){txs=txs.filter(t=>t.id!=b.dataset.id);save();render()}};
+$("prev").onclick=()=>{view.setMonth(view.getMonth()-1);render()};
+$("next").onclick=()=>{view.setMonth(view.getMonth()+1);render()};
+$("cur").onchange=e=>{cur=e.target.value;save();render()};
+setType("out");render();
+</script>
+</body>
+</html>
