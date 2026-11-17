@@ -8,10 +8,119 @@
   <meta name="CocoaVersion" content="2775.2">
   <style type="text/css">
     p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
     span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="utf-8"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;My Money&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1">:root{--bg:#f2f4f0;--card:#fff;--ink:#1c2a38;--mute:#6b7885;--line:#dde2dc;--in:#1f7a4d;--out:#c2412d;--accent:#1c2a38;--on:#fff;</span></p>
+<p class="p1"><span class="s1">box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</span></p>
+<p class="p1"><span class="s1">@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a22;--card:#1b2631;--ink:#e8edf2;--mute:#8d9aa7;--line:#2b3947;--in:#4cc38a;--out:#ee7d6a;--accent:#e8edf2;--on:#121a22}}</span></p>
+<p class="p1"><span class="s1">:root[data-theme="dark"]{--bg:#121a22;--card:#1b2631;--ink:#e8edf2;--mute:#8d9aa7;--line:#2b3947;--in:#4cc38a;--out:#ee7d6a;--accent:#e8edf2;--on:#121a22}</span></p>
+<p class="p1"><span class="s1">*{box-sizing:border-box}</span></p>
+<p class="p1"><span class="s1">html{scroll-padding-top:env(safe-area-inset-top,0px)}</span></p>
+<p class="p1"><span class="s1">body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.4 "DM Sans",system-ui,-apple-system,sans-serif}</span></p>
+<p class="p1"><span class="s1">main{max-width:480px;margin:0 auto;padding:16px 16px 96px}</span></p>
+<p class="p1"><span class="s1">.top{display:flex;align-items:center;justify-content:space-between;gap:8px}</span></p>
+<p class="p1"><span class="s1">.top select,.top input{font:inherit}</span></p>
+<p class="p1"><span class="s1">.month{display:flex;align-items:center;gap:4px}</span></p>
+<p class="p1"><span class="s1">.month button{background:none;border:0;color:var(--ink);font-size:22px;padding:6px 10px;cursor:pointer}</span></p>
+<p class="p1"><span class="s1">.month strong{min-width:130px;text-align:center;font-weight:700}</span></p>
+<p class="p1"><span class="s1">.bal{margin:14px 0 0;padding:20px;border-radius:20px;background:var(--accent);color:var(--on)}</span></p>
+<p class="p1"><span class="s1">.bal small{opacity:.7;font-size:14px}</span></p>
+<p class="p1"><span class="s1">.bal .n{font-size:40px;font-weight:700;letter-spacing:-1px;line-height:1.1;margin:2px 0 14px}</span></p>
+<p class="p1"><span class="s1">.bal .row{display:flex;gap:24px}</span></p>
+<p class="p1"><span class="s1">.bal .row div{font-size:14px;opacity:.9}</span></p>
+<p class="p1"><span class="s1">.bal .row b{display:block;font-size:18px}</span></p>
+<p class="p1"><span class="s1">h2{font-size:16px;margin:24px 0 8px}</span></p>
+<p class="p1"><span class="s1">.card{background:var(--card);border:1px solid var(--line);border-radius:14px}</span></p>
+<p class="p1"><span class="s1">.cat{padding:12px 14px}</span></p>
+<p class="p1"><span class="s1">.cat+.cat{border-top:1px solid var(--line)}</span></p>
+<p class="p1"><span class="s1">.cat .l{display:flex;justify-content:space-between;font-size:15px}</span></p>
+<p class="p1"><span class="s1">.bar{height:6px;border-radius:3px;background:var(--line);margin-top:6px;overflow:hidden}</span></p>
+<p class="p1"><span class="s1">.bar i{display:block;height:100%;background:var(--out)}</span></p>
+<p class="p1"><span class="s1">.tx{display:flex;align-items:center;gap:12px;padding:12px 14px}</span></p>
+<p class="p1"><span class="s1">.tx+.tx{border-top:1px solid var(--line)}</span></p>
+<p class="p1"><span class="s1">.tx .m{flex:1;min-width:0}</span></p>
+<p class="p1"><span class="s1">.tx .m b{display:block;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}</span></p>
+<p class="p1"><span class="s1">.tx .m span{font-size:13px;color:var(--mute)}</span></p>
+<p class="p1"><span class="s1">.amt{font-weight:700;white-space:nowrap}</span></p>
+<p class="p1"><span class="s1">.amt.in{color:var(--in)}.amt.out{color:var(--out)}</span></p>
+<p class="p1"><span class="s1">.del{background:none;border:0;color:var(--mute);font-size:20px;padding:4px 8px;cursor:pointer}</span></p>
+<p class="p1"><span class="s1">.empty{padding:22px 16px;text-align:center;color:var(--mute)}</span></p>
+<p class="p1"><span class="s1">.fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--accent);color:var(--on);border:0;border-radius:28px;padding:14px 22px;font:700 16px "DM Sans",system-ui,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}</span></p>
+<p class="p1"><span class="s1">dialog{border:0;border-radius:20px;padding:20px;width:calc(100% - 24px);max-width:440px;background:var(--card);color:var(--ink)}</span></p>
+<p class="p1"><span class="s1">dialog::backdrop{background:rgba(0,0,0,.45)}</span></p>
+<p class="p1"><span class="s1">.seg{display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px}</span></p>
+<p class="p1"><span class="s1">.seg button{flex:1;padding:10px;border:0;background:none;color:var(--ink);font:500 16px inherit;font-family:inherit;cursor:pointer}</span></p>
+<p class="p1"><span class="s1">.seg button.on{background:var(--accent);color:var(--on)}</span></p>
+<p class="p1"><span class="s1">label{display:block;font-size:14px;color:var(--mute);margin:10px 0 4px}</span></p>
+<p class="p1"><span class="s1">.f{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}</span></p>
+<p class="p1"><span class="s1">.acts{display:flex;gap:10px;margin-top:18px}</span></p>
+<p class="p1"><span class="s1">.acts button{flex:1;padding:13px;border-radius:12px;border:1px solid var(--line);background:none;color:var(--ink);font:700 16px "DM Sans",system-ui,sans-serif;cursor:pointer}</span></p>
+<p class="p1"><span class="s1">.acts .go{background:var(--accent);color:var(--on);border-color:var(--accent)}</span></p>
+<p class="p1"><span class="s1">.note{font-size:12px;color:var(--mute);text-align:center;margin-top:20px}</span></p>
+<p class="p1"><span class="s1">.err{color:var(--out);font-size:14px;min-height:20px;margin:8px 0 0}</span></p>
+<p class="p1"><span class="s1">.out{background:none;border:0;color:var(--mute);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer;padding:4px}</span></p>
+<p class="p1"><span class="s1">button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--in);outline-offset:2px}</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;main&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="top"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="month"&gt;&lt;button id="prev" aria-label="Previous month"&gt;‹&lt;/button&gt;&lt;strong id="mlabel"&gt;&lt;/strong&gt;&lt;button id="next" aria-label="Next month"&gt;›&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="cur" class="f" style="width:auto;padding:8px" aria-label="Currency"&gt;&lt;option&gt;$&lt;/option&gt;&lt;option&gt;€&lt;/option&gt;&lt;option&gt;£&lt;/option&gt;&lt;option&gt;₹&lt;/option&gt;&lt;option&gt;¥&lt;/option&gt;&lt;option&gt;R$&lt;/option&gt;&lt;option&gt;₩&lt;/option&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section class="bal"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;small&gt;Balance this month&lt;/small&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="n" id="bal"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="row"&gt;&lt;div&gt;Income&lt;b id="inc"&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Spent&lt;b id="exp"&gt;&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Where it went&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="card" id="cats"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Transactions&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="card" id="list"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;p class="note"&gt;Synced to your account. &lt;button class="out" id="signout"&gt;Sign out&lt;/button&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/main&gt;</span></p>
+<p class="p1"><span class="s1">&lt;button class="fab" id="add"&gt;+ Add&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;dialog id="dlg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="seg"&gt;&lt;button id="tOut" class="on" type="button"&gt;Expense&lt;/button&gt;&lt;button id="tIn" type="button"&gt;Income&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;label for="amount"&gt;Amount&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input id="amount" class="f" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0.00"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;label for="cat"&gt;Category&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;select id="cat" class="f"&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;label for="note"&gt;Note (optional)&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input id="note" class="f" type="text" maxlength="60" placeholder="e.g. Lunch with Sam"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;label for="date"&gt;Date&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input id="date" class="f" type="date"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="acts"&gt;&lt;button id="cancel" type="button"&gt;Cancel&lt;/button&gt;&lt;button id="save" class="go" type="button"&gt;Save&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/dialog&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;dialog id="login"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2 style="margin-top:0"&gt;Sign in to sync&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;label for="em"&gt;Email&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input id="em" class="f" type="email" autocomplete="email"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;label for="pw"&gt;Password (6+ characters)&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input id="pw" class="f" type="password" autocomplete="current-password"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;p class="err" id="err" role="alert"&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="acts"&gt;&lt;button id="signup" type="button"&gt;Create account&lt;/button&gt;&lt;button id="signin" class="go" type="button"&gt;Sign in&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/dialog&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script type="module"&gt;</span></p>
+<p class="p1"><span class="s1">import {initializeApp} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";</span></p>
+<p class="p1"><span class="s1">import {getAuth,onAuthStateChanged,signInWithEmailAndPassword,createUserWithEmailAndPassword,signOut} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";</span></p>
+<p class="p1"><span class="s1">import {initializeFirestore,persistentLocalCache,collection,doc,setDoc,deleteDoc,onSnapshot} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// STEP: paste your own config from the Firebase console here</span></p>
 <p class="p1"><span class="s1">const firebaseConfig = {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>apiKey: "AIzaSyCnLIrd77RxyvTXyBU_1tEmuM4rlavKt-o",</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>authDomain: "my-money-10660.firebaseapp.com",</span></p>
@@ -20,5 +129,69 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>messagingSenderId: "842972782467",</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>appId: "1:842972782467:web:9c4b5a7773780d190a60b6"</span></p>
 <p class="p1"><span class="s1">};</span></p>
+<p class="p1"><span class="s1">const app=initializeApp(firebaseConfig);</span></p>
+<p class="p1"><span class="s1">const auth=getAuth(app);</span></p>
+<p class="p1"><span class="s1">const db=initializeFirestore(app,{localCache:persistentLocalCache()}); // also works offline</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">const CATS={out:["Food","Transport","Bills","Shopping","Health","Fun","Other"],in:["Salary","Gift","Other income"]};</span></p>
+<p class="p1"><span class="s1">let txs=[],cur="$",type="out",view=new Date(),uid=null,unsub=null;view.setDate(1);</span></p>
+<p class="p1"><span class="s1">try{cur=localStorage.getItem("mm_cur")||"$"}catch(e){}</span></p>
+<p class="p1"><span class="s1">const $=id=&gt;document.getElementById(id);</span></p>
+<p class="p1"><span class="s1">const money=n=&gt;cur+n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});</span></p>
+<p class="p1"><span class="s1">const iso=d=&gt;d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");</span></p>
+<p class="p1"><span class="s1">const esc=s=&gt;s.replace(/[&amp;&lt;&gt;"]/g,c=&gt;({"&amp;":"&amp;amp;","&lt;":"&amp;lt;","&gt;":"&amp;gt;",'"':"&amp;quot;"}[c]));</span></p>
+<p class="p1"><span class="s1">const txCol=()=&gt;collection(db,"users",uid,"transactions");</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function render(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$("cur").value=cur;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$("mlabel").textContent=view.toLocaleDateString(undefined,{month:"long",year:"numeric"});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const key=iso(view).slice(0,7);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const m=txs.filter(t=&gt;t.date.startsWith(key)).sort((a,b)=&gt;b.date.localeCompare(a.date)||b.id-a.id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const inc=m.filter(t=&gt;t.type==="in").reduce((s,t)=&gt;s+t.amount,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const exp=m.filter(t=&gt;t.type==="out").reduce((s,t)=&gt;s+t.amount,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$("bal").textContent=(inc-exp&lt;0?"−":"")+money(Math.abs(inc-exp));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$("inc").textContent=money(inc);$("exp").textContent=money(exp);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const by={};m.filter(t=&gt;t.type==="out").forEach(t=&gt;by[t.cat]=(by[t.cat]||0)+t.amount);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const rows=Object.entries(by).sort((a,b)=&gt;b[1]-a[1]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$("cats").innerHTML=rows.length?rows.map(([c,v])=&gt;`&lt;div class="cat"&gt;&lt;div class="l"&gt;&lt;span&gt;${esc(c)}&lt;/span&gt;&lt;b&gt;${money(v)}&lt;/b&gt;&lt;/div&gt;&lt;div class="bar"&gt;&lt;i style="width:${v/exp*100}%"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;`).join(""):'&lt;div class="empty"&gt;No spending yet this month.&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$("list").innerHTML=m.length?m.map(t=&gt;`&lt;div class="tx"&gt;&lt;div class="m"&gt;&lt;b&gt;${esc(t.note||t.cat)}&lt;/b&gt;&lt;span&gt;${esc(t.cat)} · ${new Date(t.date+"T00:00").toLocaleDateString(undefined,{month:"short",day:"numeric"})}&lt;/span&gt;&lt;/div&gt;&lt;div class="amt ${t.type}"&gt;${t.type==="in"?"+":"−"}${money(t.amount)}&lt;/div&gt;&lt;button class="del" data-id="${t.id}" aria-label="Delete"&gt;×&lt;/button&gt;&lt;/div&gt;`).join(""):'&lt;div class="empty"&gt;Tap “+ Add” to record your first transaction.&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function setType(t){type=t;$("tOut").classList.toggle("on",t==="out");$("tIn").classList.toggle("on",t==="in");$("cat").innerHTML=CATS[t].map(c=&gt;`&lt;option&gt;${c}&lt;/option&gt;`).join("")}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// ---- Sync: sign-in state and live data ----</span></p>
+<p class="p1"><span class="s1">onAuthStateChanged(auth,user=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(unsub){unsub();unsub=null}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(user){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>uid=user.uid;$("login").close();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>unsub=onSnapshot(txCol(),snap=&gt;{txs=snap.docs.map(d=&gt;d.data());render()});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}else{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>uid=null;txs=[];render();$("pw").value="";$("login").showModal();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p1"><span class="s1">$("login").addEventListener("cancel",e=&gt;e.preventDefault());</span></p>
+<p class="p1"><span class="s1">const authErr=e=&gt;{$("err").textContent=({"auth/invalid-credential":"Wrong email or password.","auth/email-already-in-use":"That email already has an account. Tap Sign in.","auth/weak-password":"Use a password with at least 6 characters.","auth/invalid-email":"Enter a valid email address."})[e.code]||"Could not sign in. Check your connection and try again."};</span></p>
+<p class="p1"><span class="s1">$("signin").onclick=()=&gt;{$("err").textContent="";signInWithEmailAndPassword(auth,$("em").value.trim(),$("pw").value).catch(authErr)};</span></p>
+<p class="p1"><span class="s1">$("signup").onclick=()=&gt;{$("err").textContent="";createUserWithEmailAndPassword(auth,$("em").value.trim(),$("pw").value).catch(authErr)};</span></p>
+<p class="p1"><span class="s1">$("signout").onclick=()=&gt;signOut(auth);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// ---- Add and delete write to Firestore ----</span></p>
+<p class="p1"><span class="s1">$("add").onclick=()=&gt;{setType("out");$("amount").value="";$("note").value="";$("date").value=iso(new Date());$("dlg").showModal();$("amount").focus()};</span></p>
+<p class="p1"><span class="s1">$("tOut").onclick=()=&gt;setType("out");$("tIn").onclick=()=&gt;setType("in");</span></p>
+<p class="p1"><span class="s1">$("cancel").onclick=()=&gt;$("dlg").close();</span></p>
+<p class="p1"><span class="s1">$("save").onclick=()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const a=parseFloat($("amount").value);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!(a&gt;0)){$("amount").focus();return}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const t={id:Date.now(),type,amount:a,cat:$("cat").value,note:$("note").value.trim(),date:$("date").value||iso(new Date())};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>setDoc(doc(db,"users",uid,"transactions",String(t.id)),t);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$("dlg").close();</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p1"><span class="s1">$("list").onclick=e=&gt;{const b=e.target.closest(".del");if(!b)return;if(confirm("Delete this transaction?"))deleteDoc(doc(db,"users",uid,"transactions",b.dataset.id))};</span></p>
+<p class="p1"><span class="s1">$("prev").onclick=()=&gt;{view.setMonth(view.getMonth()-1);render()};</span></p>
+<p class="p1"><span class="s1">$("next").onclick=()=&gt;{view.setMonth(view.getMonth()+1);render()};</span></p>
+<p class="p1"><span class="s1">$("cur").onchange=e=&gt;{cur=e.target.value;try{localStorage.setItem("mm_cur",cur)}catch(x){}render()};</span></p>
+<p class="p1"><span class="s1">setType("out");render();</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
